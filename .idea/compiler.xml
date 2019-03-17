@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="futureTask" />
+        <module name="mybatis" />
+        <module name="springMVC" />
+        <module name="tomcat" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="futureTask" target="1.5" />
+      <module name="mybatis" target="1.5" />
+      <module name="springMVC" target="1.7" />
+      <module name="tomcat" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
