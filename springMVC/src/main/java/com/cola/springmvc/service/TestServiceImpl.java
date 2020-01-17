@@ -9,9 +9,10 @@ import com.cola.springmvc.annotation.Service;
  * @date: 2019/03/17 14:12
  * @description:
  */
-@Service
+@Service("TestService")
 public class TestServiceImpl implements TestService {
 
+    @Override
     public String test(String name) {
         System.out.println("Hello World!"+name);
 

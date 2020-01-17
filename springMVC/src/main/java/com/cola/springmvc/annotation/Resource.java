@@ -12,5 +12,6 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD) //作用范围：Autowire作用于类的属性上
 @Retention(RetentionPolicy.RUNTIME) //系统运行时，通过反射获取信息
 @Documented
-public @interface Autowire {
+public @interface Resource {
+    String value() default "";
 }

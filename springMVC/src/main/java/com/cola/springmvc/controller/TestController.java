@@ -1,6 +1,6 @@
 package com.cola.springmvc.controller;
 
-import com.cola.springmvc.annotation.Autowire;
+import com.cola.springmvc.annotation.Resource;
 import com.cola.springmvc.annotation.Controller;
 import com.cola.springmvc.annotation.RequestMapping;
 import com.cola.springmvc.annotation.RequstParam;
@@ -18,23 +18,24 @@ import java.io.PrintWriter;
  * @description:
  */
 
-@Controller
+@Controller("TestController")
 @RequestMapping("/test")
 public class TestController {
 
 
-    @Autowire
+    @Resource("TestService")
     TestService testService;
 
-    @RequestMapping(value = "hello")
-    public void test(HttpServletRequest request, HttpServletResponse response,
+    @RequestMapping(value = "/hello")
+    public void test(
+            HttpServletRequest request, HttpServletResponse response,
                      @RequstParam("name") String name){
 
         try {
 
-            PrintWriter writer = response.getWriter();
+            //PrintWriter writer = response.getWriter();
             String re = testService.test(name);
-            writer.print(re);
+            //writer.print(re);
 
         }catch (Exception e) {
             e.printStackTrace();
