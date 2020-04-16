@@ -23,7 +23,8 @@ public class MySelfUnSafe {
      * => 3：unsafe.allocateInstance(Class<?> var1) 给指定对象分配内存空间，不会调用构造方法
      * => 4：unsafe.allocateMemory(size) 申请堆外内存，返回的是long型的地址，JVM不能管理该内存，需要手动freeMemory()
      * => 5：compareAndSwapObject(Object,offset,expected,x) 比较Object的offset处内存位置中的值和期望的值，如果相同则更新。此更新是不可中断的。
-     * => 6：
+     *       JDK通过CPU的cmpxchgl指令的支持，实现AtomicInteger的CAS操作的原子性
+     * => 6：CAS可能存在ABA问题修改过的值有别其他线程修改回来了，就会导致线程误判没有修改过 处理方法通过添加一个自增标记位 AtomicStampedReference
      */
 
 
